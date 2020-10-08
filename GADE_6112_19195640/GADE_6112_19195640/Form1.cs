@@ -13,7 +13,7 @@ namespace GADE_6112_19195640
     public partial class Form1 : Form
     {
         GameEngine ge;
-
+        List<Enemy> enemies = new List<Enemy>();
         public Form1()
         {
             InitializeComponent();
@@ -63,9 +63,45 @@ namespace GADE_6112_19195640
 
         public void GameTick()
         {
+            enemies = new List<Enemy>();
+            CBenemies.Items.Clear();
+            CBenemies.Items.Remove(CBenemies.SelectedItem);
             ge.UpdateEnemies();
             MAPBOX.Text = "";
             MAPBOX.Text = ge.ToString();
+            
+            foreach (Enemy e in ge.M.enemies)
+            {
+                if (ge.M.PLAYER.CheckRange(e) && e.IsDead() == false)
+                {
+                    enemies.Add(e);
+                    CBenemies.Items.Add(e.ToString());
+                }
+                
+            }
         }
+
+        private void AttackButton_Click(object sender, EventArgs e)
+        {
+            if (CBenemies.SelectedText != " ")
+            {
+                ge.M.PLAYER.Attack(enemies[CBenemies.SelectedIndex]);
+                GameTick();
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

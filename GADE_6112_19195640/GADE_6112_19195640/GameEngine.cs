@@ -8,7 +8,7 @@ namespace GADE_6112_19195640
 {
     class GameEngine
     {
-        private Map m = new Map(10, 20, 10, 20, 5 );
+        private Map m = new Map(10, 20, 10, 20, 5, 3 );
 
         public Map M
         {

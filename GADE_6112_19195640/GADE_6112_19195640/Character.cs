@@ -60,7 +60,7 @@ namespace GADE_6112_19195640
         //methods
         public virtual void Attack(Character target)
         {
-
+            target.HP -= damage;
         }
         public bool IsDead()
         {
@@ -84,7 +84,7 @@ namespace GADE_6112_19195640
                 return false;
             }
         }
-        private int DistanceTo(Character target)
+        public int DistanceTo(Character target)
         {
             int xdist;
             int ydist;
@@ -114,7 +114,7 @@ namespace GADE_6112_19195640
             {
                 POSX++;
             }
-            else
+            else //no movement
             {
                 //do nothing
             }

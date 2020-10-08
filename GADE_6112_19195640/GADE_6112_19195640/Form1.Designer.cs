@@ -37,6 +37,12 @@
             this.lblMC = new System.Windows.Forms.Label();
             this.STATBOX = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.BATTLEBOX = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CBenemies = new System.Windows.Forms.ComboBox();
+            this.AttackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MAPBOX
@@ -99,9 +105,9 @@
             // 
             // STATBOX
             // 
-            this.STATBOX.Location = new System.Drawing.Point(467, 268);
+            this.STATBOX.Location = new System.Drawing.Point(467, 262);
             this.STATBOX.Name = "STATBOX";
-            this.STATBOX.Size = new System.Drawing.Size(236, 182);
+            this.STATBOX.Size = new System.Drawing.Size(236, 188);
             this.STATBOX.TabIndex = 7;
             this.STATBOX.Text = "";
             // 
@@ -111,11 +117,73 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(815, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Attacking Controls";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // BATTLEBOX
+            // 
+            this.BATTLEBOX.Location = new System.Drawing.Point(747, 262);
+            this.BATTLEBOX.Name = "BATTLEBOX";
+            this.BATTLEBOX.Size = new System.Drawing.Size(236, 188);
+            this.BATTLEBOX.TabIndex = 13;
+            this.BATTLEBOX.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(836, 246);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Battle Info";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(552, 246);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Player Info";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // CBenemies
+            // 
+            this.CBenemies.FormattingEnabled = true;
+            this.CBenemies.Location = new System.Drawing.Point(786, 77);
+            this.CBenemies.Name = "CBenemies";
+            this.CBenemies.Size = new System.Drawing.Size(148, 21);
+            this.CBenemies.TabIndex = 16;
+            // 
+            // AttackButton
+            // 
+            this.AttackButton.Location = new System.Drawing.Point(818, 137);
+            this.AttackButton.Name = "AttackButton";
+            this.AttackButton.Size = new System.Drawing.Size(90, 23);
+            this.AttackButton.TabIndex = 17;
+            this.AttackButton.Text = "ATTACK";
+            this.AttackButton.UseVisualStyleBackColor = true;
+            this.AttackButton.Click += new System.EventHandler(this.AttackButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 462);
+            this.ClientSize = new System.Drawing.Size(1016, 462);
+            this.Controls.Add(this.AttackButton);
+            this.Controls.Add(this.CBenemies);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.BATTLEBOX);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.STATBOX);
             this.Controls.Add(this.lblMC);
             this.Controls.Add(this.btnDown);
@@ -139,6 +207,12 @@
         private System.Windows.Forms.Label lblMC;
         private System.Windows.Forms.RichTextBox STATBOX;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox BATTLEBOX;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox CBenemies;
+        private System.Windows.Forms.Button AttackButton;
     }
 }
 

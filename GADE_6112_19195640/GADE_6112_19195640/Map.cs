@@ -34,17 +34,18 @@ namespace GADE_6112_19195640
         }
 
         private Hero player;
-
+        public Item[] items;
         public Tile[,] map;
         public Enemy[] enemies;
         public Random r = new Random();
         //contructor
-        public Map(int minmapwidth,int maxmapwidth,int minmapheight, int maxmapheight, int eenemyamount)
+        public Map(int minmapwidth,int maxmapwidth,int minmapheight, int maxmapheight, int eenemyamount,  int itemamount)
         {
             this.MapWidth = r.Next(minmapwidth,maxmapwidth);
             this.MapHeight = r.Next(minmapheight, maxmapheight);
             this.EnemyAmount = eenemyamount;
 
+            items = new Item[itemamount];
             map = new Tile[MapWidth, MapHeight];
             enemies = new Enemy[EnemyAmount];
 
@@ -60,6 +61,11 @@ namespace GADE_6112_19195640
                 enemies[i] = (Enemy)Create(TileType.Enemy);
                 map[enemies[i].POSX, enemies[i].POSY]= enemies[i];
             }
+            for (int i = 0; i < items.Length; i++)
+            {
+                items[i] = (Item)Create(TileType.Gold);
+                map[items[i].POSX, items[i].POSY] = items[i];
+            }
             UpdateVision();
         }
         //methods
@@ -68,7 +74,7 @@ namespace GADE_6112_19195640
             int randomX = r.Next(0, MapWidth);
             int randomY = r.Next(0, MapHeight);
 
-            while (map[randomX, randomY] is Obstacle || map[randomX, randomY] is Character)
+            while (map[randomX, randomY] is Obstacle || map[randomX, randomY] is Character || map[randomX, randomY] is Item)
             {
                 randomX = r.Next(0, MapWidth);
                 randomY = r.Next(0, MapHeight);
@@ -78,9 +84,21 @@ namespace GADE_6112_19195640
                 player = new Hero(randomX, randomY, 20);//player hp assigned here!
                 return player;
             }
-            else//spawning enemy
+            else if(tiletype == TileType.Enemy)
             {
-                return new Goblin(randomX, randomY);
+                int temp = r.Next(1, 3);
+                if (temp == 1)
+                {
+                    return new Goblin(randomX, randomY);
+                }
+                else
+                {
+                    return new Mage(randomX, randomY);
+                }
+            }
+            else //spawning gold
+            {
+                return new Gold(randomX, randomY);
             }
             
         }        
@@ -117,7 +135,14 @@ namespace GADE_6112_19195640
 
             foreach (Enemy e in enemies)
             {
-                map[e.POSX, e.POSY] = e;
+                if (e.IsDead() == false)
+                {
+                    map[e.POSX, e.POSY] = e;
+                }
+            }
+            foreach (Item gold in items)
+            {
+                map[gold.POSX, gold.POSY]= gold;
             }
         }
         public void SpawnObstacles()
