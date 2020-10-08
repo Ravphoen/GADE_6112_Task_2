@@ -24,6 +24,8 @@ namespace GADE_6112_19195640
         protected int damage;
         protected Tile[] characterVision = new Tile[4];
         protected movement move;
+        protected int goldpurse;
+
 
         //properties (accessors)
         public int HP
@@ -50,6 +52,11 @@ namespace GADE_6112_19195640
         {
             get { return move; }
             set { move = value; }
+        }
+        public int GOLDPURSE
+        {
+            get { return goldpurse; }
+            set { goldpurse = value; }
         }
 
         public Character(int _posx, int _posy, string _symbol):base(_posx, _posy, _symbol)
@@ -120,7 +127,14 @@ namespace GADE_6112_19195640
             }
         }
         public abstract movement ReturnMove(movement move = 0);
-        public abstract override string ToString();
-        
+        public abstract override string ToString();  
+        public void PickUp(Item i)
+        {
+            if (i is Gold)
+            {
+                Gold g = (Gold)i;
+                goldpurse += g.GOLDAMOUNT;
+            }
+        }
     }
 }

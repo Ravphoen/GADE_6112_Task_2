@@ -34,6 +34,7 @@ namespace GADE_6112_19195640
 
         public void DisplayPlayerStats()
         {
+            STATBOX.Text = "";
             STATBOX.Text = ge.M.PLAYER.ToString();
         }
 
@@ -63,6 +64,7 @@ namespace GADE_6112_19195640
 
         public void GameTick()
         {
+            DisplayPlayerStats();
             enemies = new List<Enemy>();
             CBenemies.Items.Clear();
             CBenemies.Items.Remove(CBenemies.SelectedItem);

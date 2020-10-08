@@ -18,7 +18,7 @@ namespace GADE_6112_19195640
         {
             if (move == movement.Left)
             {
-                if (CHARACTERVISION[1] is EmptyTile)
+                if (CHARACTERVISION[1] is EmptyTile || CHARACTERVISION[1] is Item)
                 {
                     move = movement.Left;
                     POSY--;
@@ -30,7 +30,7 @@ namespace GADE_6112_19195640
             }
             else if (move == movement.Up)
             {
-                if (CHARACTERVISION[0] is EmptyTile)
+                if (CHARACTERVISION[0] is EmptyTile || CHARACTERVISION[0] is Item)
                 {
                     move = movement.Up;
                     POSX--;
@@ -42,7 +42,7 @@ namespace GADE_6112_19195640
             }
             else if (move == movement.Right)
             {
-                if (CHARACTERVISION[3] is EmptyTile)
+                if (CHARACTERVISION[3] is EmptyTile || CHARACTERVISION[3] is Item)
                 {
                     move = movement.Right;
                     POSY++;
@@ -54,7 +54,7 @@ namespace GADE_6112_19195640
             }
             else if (move == movement.Down)
             {
-                if (CHARACTERVISION[2] is EmptyTile)
+                if (CHARACTERVISION[2] is EmptyTile || CHARACTERVISION[2] is Item)
                 {
                     move = movement.Down;
                     POSX++;
@@ -71,8 +71,8 @@ namespace GADE_6112_19195640
         {
             return "Player Stats:\n"
                 + "HP:" + HP + "/" + MAXHP + "\nDamage:"
-                + DAMAGE + "\n[" + POSX + "," + POSY + "]";
-                
+                + DAMAGE + "\n[" + POSX + "," + POSY + "]\n"
+                +"Gold: " +GOLDPURSE;       
         }
     }
 }

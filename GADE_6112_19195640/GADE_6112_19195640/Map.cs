@@ -142,7 +142,10 @@ namespace GADE_6112_19195640
             }
             foreach (Item gold in items)
             {
-                map[gold.POSX, gold.POSY]= gold;
+                if (gold != null)
+                {
+                    map[gold.POSX, gold.POSY] = gold;
+                }                
             }
         }
         public void SpawnObstacles()
@@ -167,6 +170,22 @@ namespace GADE_6112_19195640
                     map[x, y] = new EmptyTile(x,y);
                 }
             }
+        }
+        public Item GetItemAtPosition(int x, int y)
+        {
+            Item pickedupitem = null;
+            for (int j = 0; j < items.Length; j++)
+            {
+                if (items[j] != null)
+                {
+                    if (items[j].POSX == x && items[j].POSY == y)
+                    {
+                        pickedupitem = items[j];
+                        items[j] = null;
+                    }
+                }
+            }
+            return pickedupitem;
         }
     }
 }

@@ -23,6 +23,11 @@ namespace GADE_6112_19195640
             }
             else
             {
+                Item P_item = m.GetItemAtPosition(m.PLAYER.POSX, m.PLAYER.POSY);
+                if (P_item != null)
+                {
+                    m.PLAYER.PickUp(P_item);
+                }
                 return true;
             }
         }
