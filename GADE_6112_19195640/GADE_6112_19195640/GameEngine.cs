@@ -81,5 +81,38 @@ namespace GADE_6112_19195640
             }
             m.UpdateMap();
         }       
+        public void EnemyAttack()
+        {
+            m.UpdateMap();
+            foreach (Enemy e in m.enemies)
+            {
+                if (e is Goblin)
+                {
+                    if (e.CheckRange(m.PLAYER))
+                    {
+                        e.Attack(m.PLAYER);
+                    }
+                }
+                else if (e is Mage)
+                {
+                    if (e.CheckRange(m.PLAYER))
+                    {
+                        e.Attack(m.PLAYER);
+                    }
+                    for (int i = 0; i < m.enemies.Length; i++)
+                    {
+                        if (m.enemies[i].POSX != e.POSX && m.enemies[i].POSY != e.POSY)
+                        {
+                            if (e.CheckRange(m.enemies[i]))
+                            {
+                                e.Attack(m.enemies[i]);
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+
     }
 }

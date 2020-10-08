@@ -75,5 +75,9 @@ namespace GADE_6112_19195640
             }
             return move;
         }
+        public override string ToString()
+        {
+            return "Goblin at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP;
+        }
     }
 }

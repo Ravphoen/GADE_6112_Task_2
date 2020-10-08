@@ -32,6 +32,9 @@ namespace GADE_6112_19195640
             }
         }
 
-
+        public override string ToString()
+        {
+            return "Mage at [" + POSX + "," + POSY + "] Deals:(" + DAMAGE + ") HP:" + HP;
+        }
     }
 }

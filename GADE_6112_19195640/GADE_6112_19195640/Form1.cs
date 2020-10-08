@@ -78,8 +78,7 @@ namespace GADE_6112_19195640
                 {
                     enemies.Add(e);
                     CBenemies.Items.Add(e.ToString());
-                }
-                
+                }                
             }
         }
 
@@ -88,7 +87,19 @@ namespace GADE_6112_19195640
             if (CBenemies.SelectedText != " ")
             {
                 ge.M.PLAYER.Attack(enemies[CBenemies.SelectedIndex]);
-                GameTick();
+                //if (enemies[CBenemies.SelectedIndex] is Goblin)
+                //{
+                //    BATTLEBOX.Text = enemies[CBenemies.SelectedIndex].ToString();
+                //}
+                //else if (enemies[CBenemies.SelectedIndex] is Mage)
+                //{
+                //    BATTLEBOX.Text = enemies[CBenemies.SelectedIndex].ToString();
+                //}
+                BATTLEBOX.Text = enemies[CBenemies.SelectedIndex].ToString();
+                ge.EnemyAttack();
+                DisplayPlayerStats();
+                MAPBOX.Text = "";
+                MAPBOX.Text = ge.ToString();
             }
         }
 

@@ -81,7 +81,7 @@ namespace GADE_6112_19195640
             }
             if (tiletype == TileType.Hero)
             {
-                player = new Hero(randomX, randomY, 20);//player hp assigned here!
+                player = new Hero(randomX, randomY, 100);//player hp assigned here!
                 return player;
             }
             else if(tiletype == TileType.Enemy)

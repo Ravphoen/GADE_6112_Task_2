@@ -158,9 +158,9 @@
             // CBenemies
             // 
             this.CBenemies.FormattingEnabled = true;
-            this.CBenemies.Location = new System.Drawing.Point(786, 77);
+            this.CBenemies.Location = new System.Drawing.Point(747, 77);
             this.CBenemies.Name = "CBenemies";
-            this.CBenemies.Size = new System.Drawing.Size(148, 21);
+            this.CBenemies.Size = new System.Drawing.Size(236, 21);
             this.CBenemies.TabIndex = 16;
             // 
             // AttackButton
