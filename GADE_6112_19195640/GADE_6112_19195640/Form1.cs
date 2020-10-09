@@ -125,6 +125,19 @@ namespace GADE_6112_19195640
         private void LOADbtn_Click(object sender, EventArgs e)
         {
             ge.Load();
+            enemies = new List<Enemy>();
+            DisplayPlayerStats();
+            MAPBOX.Text = "";
+            MAPBOX.Text = ge.ToString();
+
+            foreach (Enemy en in ge.M.enemies)
+            {
+                if (ge.M.PLAYER.CheckRange(en) && en.IsDead() == false)
+                {
+                    enemies.Add(en);
+                    CBenemies.Items.Add(en.ToString());
+                }
+            }
         }
     }
 }
