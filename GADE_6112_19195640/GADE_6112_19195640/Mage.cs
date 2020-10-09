@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_19195640
 {
+    [Serializable]
     class Mage : Enemy
     {
         public Mage(int _posx, int _posy, string _symbol = "M", int _damage=5, int _hp=5) : base(_posx, _posy, _symbol, _damage, _hp)

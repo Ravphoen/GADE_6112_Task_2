@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_19195640
 {
+    [Serializable]
     class Goblin : Enemy
     {
         public Goblin(int _posx, int _posy, string _symbol = "G", int _damage = 1, int _hp = 10):base(_posx, _posy, _symbol, _damage, _hp)

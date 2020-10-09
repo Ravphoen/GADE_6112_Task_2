@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_19195640
 {
+    [Serializable]
     class Map
     {
         private int mapwidth;

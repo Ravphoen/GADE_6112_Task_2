@@ -43,6 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CBenemies = new System.Windows.Forms.ComboBox();
             this.AttackButton = new System.Windows.Forms.Button();
+            this.LOADbtn = new System.Windows.Forms.Button();
+            this.SAVEbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MAPBOX
@@ -107,7 +109,7 @@
             // 
             this.STATBOX.Location = new System.Drawing.Point(467, 262);
             this.STATBOX.Name = "STATBOX";
-            this.STATBOX.Size = new System.Drawing.Size(236, 188);
+            this.STATBOX.Size = new System.Drawing.Size(236, 159);
             this.STATBOX.TabIndex = 7;
             this.STATBOX.Text = "";
             // 
@@ -131,7 +133,7 @@
             // 
             this.BATTLEBOX.Location = new System.Drawing.Point(747, 262);
             this.BATTLEBOX.Name = "BATTLEBOX";
-            this.BATTLEBOX.Size = new System.Drawing.Size(236, 188);
+            this.BATTLEBOX.Size = new System.Drawing.Size(236, 159);
             this.BATTLEBOX.TabIndex = 13;
             this.BATTLEBOX.Text = "";
             // 
@@ -173,11 +175,33 @@
             this.AttackButton.UseVisualStyleBackColor = true;
             this.AttackButton.Click += new System.EventHandler(this.AttackButton_Click);
             // 
+            // LOADbtn
+            // 
+            this.LOADbtn.Location = new System.Drawing.Point(884, 427);
+            this.LOADbtn.Name = "LOADbtn";
+            this.LOADbtn.Size = new System.Drawing.Size(99, 23);
+            this.LOADbtn.TabIndex = 18;
+            this.LOADbtn.Text = "Load";
+            this.LOADbtn.UseVisualStyleBackColor = true;
+            this.LOADbtn.Click += new System.EventHandler(this.LOADbtn_Click);
+            // 
+            // SAVEbtn
+            // 
+            this.SAVEbtn.Location = new System.Drawing.Point(771, 427);
+            this.SAVEbtn.Name = "SAVEbtn";
+            this.SAVEbtn.Size = new System.Drawing.Size(99, 23);
+            this.SAVEbtn.TabIndex = 19;
+            this.SAVEbtn.Text = "Save";
+            this.SAVEbtn.UseVisualStyleBackColor = true;
+            this.SAVEbtn.Click += new System.EventHandler(this.SAVEbtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 462);
+            this.Controls.Add(this.SAVEbtn);
+            this.Controls.Add(this.LOADbtn);
             this.Controls.Add(this.AttackButton);
             this.Controls.Add(this.CBenemies);
             this.Controls.Add(this.label2);
@@ -193,6 +217,7 @@
             this.Controls.Add(this.MAPBOX);
             this.Name = "Form1";
             this.Text = "Battle";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,6 +238,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CBenemies;
         private System.Windows.Forms.Button AttackButton;
+        private System.Windows.Forms.Button LOADbtn;
+        private System.Windows.Forms.Button SAVEbtn;
     }
 }
 

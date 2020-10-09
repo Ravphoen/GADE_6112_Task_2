@@ -112,5 +112,19 @@ namespace GADE_6112_19195640
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SAVEbtn_Click(object sender, EventArgs e)
+        {
+            ge.Save();
+        }
+
+        private void LOADbtn_Click(object sender, EventArgs e)
+        {
+            ge.Load();
+        }
     }
 }

@@ -7,15 +7,9 @@ using System.Windows.Forms;
 
 namespace GADE_6112_19195640
 {
-    public enum movement
-    {
-        NoMovement,
-        Up,
-        Down,
-        Left,
-        Right
-    }
-
+    
+    
+    [Serializable]
     abstract class Character : Tile
     {
         //variables

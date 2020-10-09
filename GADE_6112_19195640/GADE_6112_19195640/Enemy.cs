@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_19195640
 {
+    [Serializable]
     abstract class Enemy : Character
     {
         protected Random r = new Random();

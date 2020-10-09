@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_19195640
 {
-    public enum TileType
-    {
-        Hero,
-        Enemy,
-        Gold,
-        Weapon
-    }
+    [Serializable]
+   
     abstract class Tile
     {
         protected int posx;

@@ -1,11 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System;
+using System.Windows.Forms;
 
 namespace GADE_6112_19195640
 {
+    public enum movement
+    {
+        NoMovement,
+        Up,
+        Down,
+        Left,
+        Right
+    }
+    public enum TileType
+    {
+        Hero,
+        Enemy,
+        Gold,
+        Weapon
+    }
     class GameEngine
     {
         private Map m = new Map(10, 20, 10, 20, 5, 3 );
@@ -48,7 +62,7 @@ namespace GADE_6112_19195640
         public void UpdateEnemies()
         {
             movement movetemp;
-
+            m.UpdateVision();
             foreach (Enemy e in m.enemies)
             {
                 m.UpdateVision();
@@ -113,6 +127,44 @@ namespace GADE_6112_19195640
             }
             
         }
+        public void Save()
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fs = new FileStream("Save.dat", FileMode.Create,FileAccess.Write,FileShare.None);
 
+            try
+            {
+                using (fs)
+                {
+                    bf.Serialize(fs,m);
+                }
+                MessageBox.Show("Save successful");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        public void Load()
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fs = new FileStream("Save.dat", FileMode.Open, FileAccess.Read, FileShare.None);
+
+            try
+            {
+                using (fs)
+                {
+                    Map mp = (Map)bf.Deserialize(fs);
+                    m = mp;
+                }
+                m.UpdateMap();
+                MessageBox.Show("Load Successful");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_19195640
 {
+    [Serializable]
     class Hero : Character
     {
         public Hero(int _posx, int _posy, int _hp, string _symbol = "H", int _damage = 2 ) : base(_posx, _posy, _symbol)
