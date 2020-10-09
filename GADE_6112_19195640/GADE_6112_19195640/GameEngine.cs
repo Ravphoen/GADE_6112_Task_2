@@ -91,9 +91,9 @@ namespace GADE_6112_19195640
                         }
                     }
                 }
-              
+                m.UpdateMap();
             }
-            m.UpdateMap();
+            
         }       
         public void EnemyAttack()
         {
