@@ -43,25 +43,21 @@ namespace GADE_6112_19195640
             ge.MovePlayer(movement.Up);
             GameTick();
         }
-
         private void btnLEFT_Click(object sender, EventArgs e)
         {
             ge.MovePlayer(movement.Left);
             GameTick();
         }
-
         private void btnRIGHT_Click(object sender, EventArgs e)
         {
             ge.MovePlayer(movement.Right);
             GameTick();
         }
-
         private void btnDown_Click(object sender, EventArgs e)
         {
             ge.MovePlayer(movement.Down);
             GameTick();
         }
-
         public void GameTick()
         {
             DisplayPlayerStats();

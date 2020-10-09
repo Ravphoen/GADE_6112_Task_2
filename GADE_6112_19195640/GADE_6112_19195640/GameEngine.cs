@@ -51,8 +51,8 @@ namespace GADE_6112_19195640
 
             foreach (Enemy e in m.enemies)
             {
-                movetemp = e.ReturnMove();
                 m.UpdateVision();
+                movetemp = e.ReturnMove();
                 if (e is Goblin)
                 {
                     if (e.CheckRange(m.PLAYER))
